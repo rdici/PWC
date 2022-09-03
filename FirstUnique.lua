@@ -1,4 +1,5 @@
 local write = io.write
+-- Added a comment here
 mytab = {}
 arr = { 
 	"Perl Weekly Challenge",

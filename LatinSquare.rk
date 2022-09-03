@@ -1,0 +1,28 @@
+use v6;
+my $cnt = 5;
+my @seen;
+#@seen[0] = 1;
+
+sub genx( $n ){
+  #for (1..5 ) {
+    for (1..4).pick(4) -> $ch {
+      print "$ch ";
+    }
+    put " ";
+  #}
+}
+
+#  my @arr;
+#  @arr.push: genx(4);
+
+# for (@arr) {
+#   print "$_ ";
+# }
+
+my @start = 1,2,3,4;
+for (1..4) {
+  my @a = 1..4;
+  my @p = @a.pick(4);
+  next if (@p[0] == @start[0]) || (@p[1] == @start[1]) || (@p[2] == @start[2]) || (@p[3] == @start[3]);
+  say @p;
+}

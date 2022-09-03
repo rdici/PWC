@@ -1,0 +1,56 @@
+use v6;
+
+# render pod text with command:
+
+# raku --doc .\Factorions.rk
+
+=begin pod
+
+=NAME Challenge #153 Factorions ( Raku )
+
+=AUTHOR Robert DiCicco
+
+=DATE 21-FEB-2022
+
+=head1 DESCRIPTION
+
+You are given an integer, $n.
+
+Write a script to figure out if the given integer is a factorion.
+
+A factorion is a natural number that equals the sum of the factorials of its digits.
+
+Example 1:
+
+Input: $n = 145
+Output: 1
+
+    Since 1! + 4! + 5! => 1 + 24 + 120 = 145
+
+=end pod
+
+multi sub factorial($x where {$x < 2}) {
+  return 1;
+}
+
+multi sub factorial($x where {$x >= 2}) {
+  return $x * factorial($x - 1);
+}
+
+sub is_factorion(Int $n) {
+  my $outstr = q{};
+  my $sumdigits = 0;
+  my @digits = $n.comb;
+  for @digits -> $item { 
+    $outstr ~= "$item\! + ";
+    $sumdigits += factorial($item);
+  }
+  print "$outstr.chop(3)" ~ " = $sumdigits\n";
+  ($sumdigits == $n) ?? 1 !! 0;
+}
+
+sub MAIN(Int $num) {
+  print "Input \$n = $num\n";
+  my $ret = is_factorion($num);
+  print "Output: $ret\n";
+}

@@ -1,0 +1,25 @@
+use v6;
+
+# AUTHOR: Robert DiCicco
+# DATE: 2022-08-01
+# Challenge 176 Reversible Numbers ( Raku )
+
+# Single line version I got off of Laurent blog; awesome
+# print "$_ " unless $_ + .flip ~~ /<[02468]>/ for 1..100;
+
+sub MAIN() {
+  for 10..^100 -> $num {
+    print "$num " if AllDigitsOdd($num + $num.comb.reverse.join);
+  }
+  print "\n";
+}
+
+sub AllDigitsOdd( $d ) {
+  $d ~~ /<[02468]>/ ?? False !! True;
+}
+
+#----------------------------------------
+# SAMPLE OUTPUT
+# PS G:\Projects\Perl\Challenges> raku .\Reversible.rk
+# 10 12 14 16 18 21 23 25 27 30 32 34 36 41 43 45 50 52 54 61 63 70 72 81 90 
+

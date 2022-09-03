@@ -1,0 +1,50 @@
+use v6;
+
+#`(
+  A happy number is defined by the following process:
+  Starting with any positive integer, replace the number 
+  by the sum of the squares of its digits, and repeat the 
+  process until the number equals   1   (where it will stay),   
+  or it loops endlessly in a cycle which does not include   1.   
+
+  Those numbers for which this process end in 1 are happy   numbers,   
+  while   those numbers that do not end in 1 are unhappy numbers. 
+
+  Task
+  Find and print the first   8   happy numbers. 
+)
+
+my %seen;
+
+sub process( UInt $num) {
+  my $sum = 0;
+  for ( $num.comb ) { $sum += $_ ** 2 }
+  if %seen.EXISTS-KEY($sum) { return 0 }
+  if $sum > 1 {
+    %seen{$sum} = 1;
+    process( $sum );
+  } else {
+    return $sum; 
+  }
+}
+  
+sub USAGE() {
+    print Q:c:to/EOH/; 
+    Usage: {$*PROGRAM-NAME} [number]
+    Number must be an integer between 1 and 20
+EOH
+}
+
+sub MAIN( UInt $cnt is copy where 1 .. 20 ) {
+  my $n = 1;
+  while ($cnt > 0) {
+    my $retval = process($n);
+    if $retval > 0 {
+      print "$n ";  # is a Happy Number!";
+      $cnt--;
+    }
+    %seen = ();
+    $n++;
+  }
+  say ' ';
+}

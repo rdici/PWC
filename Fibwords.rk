@@ -1,0 +1,53 @@
+#!raku.pl
+
+=begin pod
+
+=NAME Challenge 150 Fibonacci Words (Raku)
+
+=AUTHOR Robert DiCicco
+
+=DATE 01-FEB--2022
+
+=head1 DESCRIPTION
+
+You are given two strings having same number of digits, $a and $b.
+
+Write a script to generate Fibonacci Words by concatenation of the previous two strings. Finally print 51st digit of the first term having at least 51 digits.
+Example:
+
+    Input: $a = '1234' $b = '5678'
+    Output: 7
+
+    Fibonacci Words:
+
+    '1234'
+    '5678'
+    '12345678'
+    '567812345678'
+    '12345678567812345678'
+    '56781234567812345678567812345678'
+    '1234567856781234567856781234567812345678567812345678'
+
+    The 51st digit in the first term having at least 51 digits '1234567856781234567856781234567812345678567812345678' is 7.
+
+=end pod
+
+my $a = '1234';
+my $b = '5678';
+
+say "Fibonacci Words";
+say $a;
+say $b;
+my $retval = Fib(  $a, $b );
+my $fibchr = substr($retval, 50, 1);
+say "51st digit is $fibchr";
+
+sub Fib ( $first, $second) {
+  my $val = $first ~ $second;
+  say $val;
+  if $val.chars < 51 {
+    Fib($second, $val);
+  } else {
+    return $val;
+  }
+}

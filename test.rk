@@ -1,0 +1,50 @@
+use v6;
+
+my $howmany = 8;
+
+my @out;
+
+#say pn_primorial(7);
+
+for 1..$howmany+1 {
+  my $p = pn_primorial($_);
+  say "$p = primorial $_";
+  my $m = 1;
+  my $i = 0;
+  repeat {
+    $m++;
+    $i = $p + $m;
+    if $i.is-prime {
+      say "i = $i " ~ $i.is-prime;
+    }
+} until ( $i.is-prime);
+ if $i.is-prime {
+    @out.push($m);
+  }
+  say @out;
+}
+
+say @out.sort.unique;
+
+# my $retval = factorial(8);
+# say "Retval = $retval";
+
+
+
+sub pn_primorial ( $x ) {
+  my @primes = 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97;
+  my $sum = 0;
+  for (0..$x) {
+    print "$_\n";
+    $sum += @primes[$x] ;
+  }
+  return @primes[$x+1] - @primes[$x];
+}
+
+multi sub factorial($x where {$x < 2}) {
+  return 1;
+}
+
+multi sub factorial($x where {$x >= 2}) {
+  return $x * factorial($x - 1);
+}

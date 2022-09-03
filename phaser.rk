@@ -1,0 +1,5 @@
+given (2..10).pick {
+  LEAVE say (now - ENTER now) ~ 'seconds  have passed';
+  say "waiting $_ seconds";
+  sleep $_;
+}

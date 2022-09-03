@@ -1,0 +1,10 @@
+use v6;
+
+my $str = "NJSIOADNTEPIORECRS";
+my @arr = $str.comb;
+
+for @arr.permutations -> $p  {
+  say $p
+}
+
+

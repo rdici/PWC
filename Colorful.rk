@@ -1,0 +1,17 @@
+use v6;
+
+
+my @arr = 17439.comb;
+# my @a = @arr.permutations;
+#  for @a -> $x {
+#      print("$x\n");
+#  }
+#.say for @a.combinations: 5;
+my @a = combinations @arr, 2..5;
+for @a -> $x {
+     print("$x\n");
+}
+
+# my @digits = 17471.comb;
+# my %sums = @digits.Bag;
+# print(%sums);

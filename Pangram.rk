@@ -1,0 +1,59 @@
+use v6;
+
+# AUTHOR: Robert DiCicco
+# DATE: 20-APR-2022
+# Challenge 161 Pangrams ( Raku )
+
+my %usage;                # Hash to hold Abecedarian words that have been used
+
+sub CreateWordArray() {                 # Read the Abecedarian words into an array. 
+  for open('PangramWords.txt').lines    # I really hate that word!
+  {
+    my $word = $_.trim;
+    %usage{$word} = 0;                  # Create the hash entry with a value of 0
+  }
+}
+
+sub FindRandomWord( Str $c ) {              
+  # Find a word that contains the given char.
+  # and check to see if it has not been used
+  my $counter = 1;
+  while ( True ) {
+    my $x = %usage.keys.pick;
+    if (( $x.contains($c)) && (%usage{$x} == 0)) {
+      %usage{$x} = 1;
+      return $x;
+    }
+    $counter++;                         #  Counter to prevent runaway looping.
+    if $counter > 1500 { return $c;}    # Just return the char if nothing was found
+  }
+}
+
+sub CapLetter( Str $w, Str $c ) {
+  my @a = $w.split("");
+  my $str = '';
+  for ( @a ) {
+    $_ eq $c ?? ($str ~= uc($c)) !! ($str ~= $_);
+  }
+  return $str;
+}
+
+sub MAIN ( Bool :$random ) {
+  my $retword;
+  CreateWordArray;  
+  if ($random) {
+    for ('a' .. 'z').pick(26) -> $ch {
+      $retword = FindRandomWord($ch);
+      $retword = CapLetter($retword, $ch);
+      print "$retword ";
+    }
+  } else { 
+    for ('a' .. 'z') -> $ch {
+      $retword = FindRandomWord($ch);
+      $retword = CapLetter($retword, $ch); 
+      print "$retword ";
+    }
+  } 
+}
+print "\n";
+

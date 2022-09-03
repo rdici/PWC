@@ -1,0 +1,38 @@
+use v6;
+
+=begin pod
+
+=NAME Challenge #153 Left Factorial ( Raku )
+
+=AUTHOR Robert DiCicco
+
+=DATE 21-FEB-2022
+
+=head1 DESCRIPTION
+
+Write a script to compute Left Factorials of 1 to 10. Please refer OEIS A003422 for more information.
+
+Expected Output:
+
+1, 2, 4, 10, 34, 154, 874, 5914, 46234, 409114
+
+=end pod
+
+multi sub factorial(Int $x where {$x < 2}) {
+  return 1;
+}
+
+multi sub factorial(Int $x where {$x >= 2}) {
+  return $x * factorial($x - 1);
+}
+
+my $prevval = 0;
+print 'Left Factorials: ';
+
+for 0..9 -> $i {
+  my $val = factorial($i);
+  $prevval += $val;
+  print "$prevval "; 
+}
+
+print "\n";

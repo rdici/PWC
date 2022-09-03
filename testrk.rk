@@ -1,0 +1,25 @@
+use v6;
+
+#  AUTHOR: Robert DiCicco
+# DATE: 22-MAR-2022
+# Challenge 157 Brazilian Number ( Raku )
+
+sub MAIN ( Int $num ){
+  say "Input: $num";
+  for 2..($num-2) { 
+    my $x = $num.base($_);
+    my $retval = checkDigits($x);
+    say "In base $x: $retval";
+    last if $retval == 1;
+  }
+}
+
+sub checkDigits ( $n ) {
+  my @arr = $n.comb;
+  my $digit = @arr[0];
+  for 1..(@arr.elems - 1) -> $i  {
+    my $ch = @arr[$i];
+    return 0 if ( $ch != $digit);
+  }
+  return 1;
+}

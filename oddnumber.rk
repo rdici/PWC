@@ -1,0 +1,18 @@
+use v6;
+
+my @arr = ( 2,5,4,4,5,5,2);
+#my @arr = (1, 2, 3, 4, 3, 2, 1, 4, 4);
+
+my %members = ();
+
+for (@arr) -> $key {
+  if ( ! defined( %members{$key} )) {
+    %members{$key} = 1;
+  } else {
+    %members{$key}++;
+  }
+}
+
+for (%members.keys ) -> $key {
+  say $key if (%members{$key} % 2) == 1;
+}

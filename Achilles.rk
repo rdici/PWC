@@ -1,0 +1,20 @@
+use v6;
+use Prime::Factor;
+
+my $flag =0;
+my $number = 100;
+my @factors = prime-factors($number).unique;
+say "my factors are @factors";
+say @factors.unique;
+for ( @factors) -> $x {
+  if ( ( $number % ($x**2) ) == 0 ) {
+    say "$x is good";
+    $flag++;
+  } else {
+    $flag--;
+  }
+}
+if ($flag  > 0 ) {
+  say "$number is an Achilles number";
+}
+say @factors[0] gcd @factors[1];

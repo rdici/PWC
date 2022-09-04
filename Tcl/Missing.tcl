@@ -4,6 +4,7 @@
 ###
 ###
 ###
+###
 proc permutations {list} {
   if {[llength $list] == 1} {
       return $list

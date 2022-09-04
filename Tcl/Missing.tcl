@@ -1,10 +1,7 @@
 # Author: Robert DiCicco
 # Date: 1-MAR-2022
 # Challenge #154 Missing Permutation ( Tcl )
-###
-###
-###
-###
+
 proc permutations {list} {
   if {[llength $list] == 1} {
       return $list

@@ -3,6 +3,7 @@
 # AUTHOR: Robert DiCicco
 # DATE: 2022-09-05
 # Challenge # 181 Sentence Order ( Julia )
+#
 
 text = "All he could think about was how it would all end.
 There was still a bit of uncertainty in the equation, but the basics were there for anyone to see.

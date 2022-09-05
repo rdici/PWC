@@ -12,8 +12,7 @@ The end was coming and it wasn't going to be pretty."
 result = split(text, ".")
 
 for i in 1:(length(result)-1)
-  next = split(result[i])
-  str = sort(next, by=lowercase)
+  str = sort(split[result[i], by=lowercase)
   println(join(str,' ') * '.')
 end
 

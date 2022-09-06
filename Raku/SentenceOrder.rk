@@ -13,8 +13,7 @@ my @result = split(/\./,$text);
 print(" ");
 for 0..@result.elems-1 -> $i {
   my @next = split(/\s+/,@result[$i]);
-  print @next.sort({lc($^a) cmp lc($^b)});
-  print ".\n";
+  print @next.sort({lc($^a) cmp lc($^b)}),".\n";
 }
 
 #---------------------------------------------

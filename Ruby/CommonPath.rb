@@ -45,12 +45,10 @@ end
 def main()
   Intro()
   new_path = GetDir( $dirs[0]);
-  secnew = new_path;
   while ( true )
     count = 0
-    new_path = GetDir( secnew);
+    new_path = GetDir(new_path);
     TestDir(new_path)
-    secnew = new_path
   end
 end
 

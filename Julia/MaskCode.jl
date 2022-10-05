@@ -10,7 +10,7 @@ for i in inp
   fnd = 0;                    # count of characters changed
   while fnd < 4 
     sp = SubString(i,cnt,cnt)
-    if ((sp == ".") || (sp == "-"))
+    if ! occursin(r"[a-z0-9]", sp)
       cnt += 1
       continue
     end

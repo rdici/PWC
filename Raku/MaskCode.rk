@@ -11,7 +11,7 @@ for ( @list ) -> $code {
   my @arr = split(/''/, $code);   # change string to an array entry
     
   while $fnd < 4  {             # looking for 4 chars that are alpha numeric
-    if @arr[$cnt] ~~ /\w/ {     # if character is alpha or numeric
+    if ( @arr[$cnt]  ~~ / <[a..z]> | <[\d]> / ) {   # if character is alpha or numeric
       @arr[$cnt] = 'x';         # change it to an 'x'
       $fnd++;                   # and bump the fnd counter
     }

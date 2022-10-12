@@ -22,7 +22,7 @@ for (@arr) -> $x {
       when 236..239 { print 'i';}
       when 242..246 { print 'o';}
       when 249..252 { print 'u';}
-      default { say '?'}
+      default { print $x.substr($i,1)}
     }
     $i++;
   }

@@ -11,35 +11,25 @@ for x in myarr
       o = str.ord
       case o
       # CAPITAL A family
-      when 192..197 
-        print "A"
-      when 200..203
+        when 192..197 then (print "A") 
       # CAPITAL E family
-        print 'E'
-      when 204..207
+        when 200..203 then (print 'E')
       # CAPITAL I family
-        print 'I'
-      when 210..214
+        when 204..207 then (print 'I')
       # CAPITAL O family
-        print 'O'
-      when 217..219
+        when 210..214 then (print 'O')
       # CAPITAL U family
-        print 'U'
-      when 224..229
+        when 217..219 then (print 'U')
       # SMALL LETTER a family
-        print 'a'
-      when 232..235
+        when 224..229 then (print 'a')
       # SMALL LETTER e family
-        print 'e'
-      when 236..239
-      # SMALL LETTER i family
-        print 'i'
-      when 242..246
-      # SMALL LETTER o family
-        print 'o'
-      when 249..252
+        when 232..235 then (print 'e')
+      # SMALL LETTER i family 
+        when 236..239then (print 'i')
+      # SMALL LETTER o family 
+        when 242..246then (print 'o')
       # SMALL LETTER u family
-        print 'u'
+        when 249..252 then print 'u'
       else
         prints '?'
       end

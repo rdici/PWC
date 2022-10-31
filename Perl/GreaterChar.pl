@@ -24,10 +24,12 @@ sub TestValues( $a, $tv ) {
   print "Input: \@array = qw\(@$a\), target = $tv\n";
   my @out = ();
   for ($x = 0; $x < $sz; $x++){
-    @$a[$x] gt $tv ? push(@out, @$a[$x]) : push(@out, $tv);
+    if (@$a[$x] gt $tv) {
+      push(@out, @$a[$x]);    
+    }
   }
   @out = sort(@out);
-  print $out[0] . "\n\n";
+  scalar @out > 0 ? print $out[0] . "\n\n" : print $tv . "\n\n";
 }
 
 sub main {
@@ -41,7 +43,6 @@ main();
 
 =pod
 ----------------------------------------------------
-SAMPLE OUTPUT
 PS G:\Projects\Perl\Challenges> perl .\GreaterChar.pl
 Input: @array = qw(e m u g), target = b
 e
@@ -50,11 +51,12 @@ Input: @array = qw(d c e f), target = a
 c
 
 Input: @array = qw(j a r), target = o
-o
+r
 
 Input: @array = qw(d c a f), target = a
-a
+c
 
 Input: @array = qw(t g a l), target = v
 v
+
 =cut

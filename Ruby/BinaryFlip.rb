@@ -25,7 +25,7 @@ ns.each do |n|
   binvals = []
   puts "Input: $n = #{n}"
   binvals = sprintf("%B", n).to_s
-  (0..2).each do |v|
+  (0..binvals.length).each do |v|
     if binvals[v] == '0'
       out.push('1')
     elsif binvals[v] == '1'

@@ -23,20 +23,17 @@ for s in ss :
   x = 0
   seen = dict()
   print(f"Input: $s = {s}")
-  ln =len(s)
-  while x < ln :
+  while x < len(s) :
     zsub = s[x:x+1]
     if zsub in seen :
-      seen[zsub] += 1
+       seen[zsub] += 1
     else :
-      seen[zsub] = 1
+       seen[zsub] = 1
     x += 1
   
   highest = max(seen.values())
   lowest  = min(seen.values())
+  print("Output: 1\n") if (lowest + 1 == highest) else print("Output: 0")
   
-  if (lowest + 1 == highest) :
-    print("Output: 1\n")
-  else :
-    print("Output: 0\n")
+    
   

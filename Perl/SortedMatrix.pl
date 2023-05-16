@@ -1,57 +1,52 @@
 #!/usr/bin/env perl
+use strict;
+use warnings;
 =begin comment
 --------------------------------------
 AUTHOR: Robert DiCicco
-DATE  : 2023-05-15
+DATE  : 2023-05-16
 Challenge 217 Sorted Matrix ( Perl )
 --------------------------------------
 =cut
 
-use strict;
-use warnings;
-use feature 'say';
-
-my @matrix = ();
-my $array = $ARGV[0];
-if ($array < 0 or $array > 2) { say "Error! arg must be between 0 and 2 inclusive";exit};
-
-if ($array == 0) {
-    @matrix = ((3, 1, 2), (5, 2, 4), (0, 1, 3));
-} elsif ($array == 1) {
-    @matrix = ((2, 1), (4, 5));
-} elsif ($array == 2) {
-    @matrix = ((1, 0, 3), (0, 0, 0), (1, 2, 1));
-} else {
-    # should never get here!
-}
-    
+my @lst = (([[3, 1, 2], [5, 2, 4], [0, 1, 3]]),
+            ([[2,1],[4,5]]),
+            ([[1, 0, 3], [0, 0, 0], [1, 2, 1]]),
+            );
+            
 my @out = ();
+my @test = ();
 
-
-print "Input: \@matrix = ";
-for (@matrix) {
-    print "$_";
-    for my $val ($_) {
-        push(@out, $val);
+for my $n (@lst) {
+    my $ln = scalar(@$n);
+    print("Input: \@matrix = ");
+    print("test = @test\n");
+    for (my $cnt = 0; $cnt < $ln; $cnt++) {
+        print("["."@{@$n[$cnt]}] ");
+        for my $val (@{@$n[$cnt]}) {
+            push(@out,$val);
+        }
     }
+    print("\n");
+    @out = sort(@out);
+    print("Output: $out[2]\n");
+    @out = ();
+    print("----------------------\n");
 }
-say " ";
-@out = sort(@out);
-say "Output: $out[2]";
-
 =begin comment
 --------------------------------------
 SAMPLE OUTPUT
-perl .\SortedMatrix.pl 0
-Input: @matrix = 312524013
+perl SortedMatrix.pl
+Input: @matrix = test =
+[3 1 2] [5 2 4] [0 1 3]
 Output: 1
-
-PS G:\Projects\Perl\Challenges> perl .\SortedMatrix.pl 1
-Input: @matrix = 2145
+----------------------
+Input: @matrix = test =
+[2 1] [4 5]
 Output: 4
-
-PS G:\Projects\Perl\Challenges> perl .\SortedMatrix.pl 2
-Input: @matrix = 103000121
+----------------------
+Input: @matrix = test =
+[1 0 3] [0 0 0] [1 2 1]
 Output: 0
 --------------------------------------
 =cut

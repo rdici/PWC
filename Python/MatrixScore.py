@@ -35,7 +35,7 @@ def ToggleRow(r, ov):
             else:
                 matrix[r][cnt] = 0
             cnt += 1
-        print("Toggled  Row ",r)
+        print("Toggled  Row ",r+1)
         ShowMatrix()
     
              
@@ -53,7 +53,7 @@ def ToggleCol(c):
     if testval > ov:
         for x in range(3):     #[0,1,2]:
             matrix[x][c] = testmat[x]
-        print("Toggled column ",c)
+        print("Toggled column ",c+1)
         ShowMatrix()
 
 def binary_to_decimal(binary_array):

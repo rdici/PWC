@@ -44,6 +44,7 @@ for (my $wd = 0; $wd < scalar @words; $wd ++ ) {
     }
     my $str = join(",",sort(@arr));
     print("\($str\)\n\n");
+    %found = ();
 }
 
 =begin comment
@@ -55,6 +56,6 @@ Input: @words = Perl Rust Raku
 Output: (r)
 
 Input: @words = love live leave
-Output: (e,l,r,v)
+Output: (e,l,v)
 ------------------------------------------------
 =cut

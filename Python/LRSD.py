@@ -2,7 +2,7 @@
 # ---------------------------------------
 # AUTHOR: Robert DiCicco
 # DATE  : 2023-07-11
-# Challenge 225 Task 2 Left Right Sum Diff ( Ruby )
+# Challenge 225 Task 2 Left Right Sum Diff ( Python )
 # ---------------------------------------
 
 arrays = [[1, 2, 3, 4, 5],[10,4,8,3]]

@@ -6,8 +6,8 @@ DATE  : 2023-07-25
 Challenge 227 Task 2 Roman Maths ( Perl )
 --------------------------------------
 =cut
-use strict;
-use warnings;
+#use strict;
+#use warnings;
 use v5.38;
 use Math::Roman qw/tokens roman /;
 
@@ -26,7 +26,7 @@ $lft = $lft->as_number();             # and convert it to an arabic number for u
 my $rt = Math::Roman::roman($right);
 $rt = $rt->as_number();
 
-if ($lft - $rt == 0) {
+if ($op eq '-' and ($lft - $rt) == 0) {
     print("$left $op $right est nulla\n");
     exit;
 }
@@ -34,11 +34,11 @@ if ($op eq '/' and ($lft % $rt) > 0 ) {
     print("$left $op $right non potest\n");
     exit;
 }
-if ($lft + $rt > 3999) {
+if ($op eq '+' and ($lft + $rt) > 3999) {
     print("$left $op $right non potest\n");
     exit;
 }
-if ($op eq '-' and ($lft - $rt < 0)) {
+if ($op eq '-' and ($lft - $rt) < 0) {
     print("$left $op $right non potest\n");
     exit;
 }

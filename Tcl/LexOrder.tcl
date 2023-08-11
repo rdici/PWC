@@ -3,7 +3,7 @@ set comment {
 ---------------------------------------
 AUTHOR: Robert DiCicco
 DATE  : 2023-08-07
-Challenge 229 Lexical Order Task 1 ( Python )
+Challenge 229 Lexical Order Task 1 ( Tcl )
 ---------------------------------------
 }
 
@@ -46,3 +46,4 @@ Input: @str = (yxz cba mon)
 Output: 2
 ---------------------------------------
 }
+

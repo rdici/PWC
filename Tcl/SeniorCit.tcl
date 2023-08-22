@@ -4,7 +4,7 @@ set header {
 ----------------------------------------
 AUTHOR: Robert DiCicco
 DATE  : 2023-08-21
-Challenge 231 Senior Citizen Task 2 ( Python )
+Challenge 231 Senior Citizen Task 2 ( Tcl )
 ----------------------------------------
 }
 

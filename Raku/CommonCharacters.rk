@@ -17,7 +17,7 @@ for (@wordlist) -> @wds {
     my $charlist = "";
     say "Input: \@words = ",@wds;
     my $cnt = 0;
-    while $cnt < 3 {
+    while $cnt < $wordnum {
         $charlist ~= @wds[$cnt];
         $cnt++;
     }

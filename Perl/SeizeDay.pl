@@ -15,10 +15,11 @@ my $weekday_of_month = sprintf("%02d",$ARGV[2]);
 my $day_of_week = $ARGV[3];
 my $cnt = 0;
 my $fnd = 0;
+my $days_in_month = days_in_month ($year, $month);
 
 say "Input: Year = $year, Month = $month, Weekday of month = $weekday_of_month, day of week = $day_of_week";
 
-for (my $d = 1; $d < 31; $d++) {
+for (my $d = 1; $d <= $days_in_month; $d++) {
     $d = sprintf("%02d",$d);
     my $s = "$year-$month-$d";
     my $date  = Date::Simple->new($s);

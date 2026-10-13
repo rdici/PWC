@@ -7,9 +7,9 @@ Challenge 237 Task 01 Seize the Day ( Powershell )
 #>
 
 param (
-    [int32]$year = 2023,
+    [int32]$year = 2026,
     [int32]$month = 10,
-    [uint]$weekday_of_month = 3,
+    [uint]$weekday_of_month = 13,
     [uint]$day_of_week = 2
     )
 

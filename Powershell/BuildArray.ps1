@@ -10,13 +10,13 @@ $myints = @(( 0, 2, 1, 5, 3, 4),(5, 0, 1, 2, 3, 4))
 
 foreach ($mints in $myints ) {
     $out = @()
-    write-host "Input: @ints = [$mints]"
+    write-output "Input: @ints = [$mints]"
     $cnt = 0
     while ( $cnt -lt $mints.Count) {
         $out += $mints[$mints[$cnt]]
         $cnt += 1
     }
-    write-host "Output: [$out]`n"
+    write-output "Output: [$out]`n"
 }
 
 <# 

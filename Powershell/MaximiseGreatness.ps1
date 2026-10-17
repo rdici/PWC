@@ -25,7 +25,7 @@ function CalcScore($a, $b) {
 
 
 foreach ($nums in $mynums ) {
-    write-host "Input: @nums = [$nums]"
+    write-output "Input: @nums = [$nums]"
     $maxscore = 0
     Get-Permutation $nums | ForEach-Object {
         $perm = $_ -replace ' ',''
@@ -36,7 +36,7 @@ foreach ($nums in $mynums ) {
             $maxscore = $score
         }
     }
-    write-host "Output $maxscore`n"
+    write-output "Output $maxscore`n"
 }
 
 <# 

@@ -13,7 +13,7 @@ $myints = @( @(1, 0, 2, 3, 0, 4, 5, 0),
 for ($i = 0; $i -lt $myints.Length; $i++ )
 {
     $seen = @()
-    write-host "Input: @ints = [", $myints[$i], "]"
+    write-output "Input: @ints = [", $myints[$i], "]"
     $ln = $myints[$i].Length - 1
     foreach ($x in $myints[$i]) {
         if ($x -eq 0) {
@@ -23,7 +23,7 @@ for ($i = 0; $i -lt $myints.Length; $i++ )
             $seen += $x
         }
     }
-    write-host "Output: [",$seen[0..$ln],"]`n"
+    write-output "Output: [",$seen[0..$ln],"]`n"
 }
 
 <#

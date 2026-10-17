@@ -9,7 +9,7 @@ Challenge 236 Task 01 Exact Change ( Powershell )
 $bills = @( (5, 5, 5, 10, 20), (5, 5, 10, 10, 20),(5, 5, 5, 20))
 
 foreach  ($paid in $bills ) {
-    write-host "Input: @bills = [$paid]"
+    write-output "Input: @bills = [$paid]"
     $cnt = 0
     $change = 0
     $ln = $paid.Length
@@ -21,10 +21,10 @@ foreach  ($paid in $bills ) {
             10 {}
             20 {
                 if ($change_required -gt $change) {
-                    write-host "Output: false`n"
+                    write-output "Output: false`n"
                     break
                 } else {
-                    write-host "Output: true`n"
+                    write-output "Output: true`n"
                     break
                 }
             }

@@ -10,14 +10,14 @@ Challenge 238 Task 01 Running Sum ( Powershell )
 $myints = @( (1, 2, 3, 4, 5),(1, 1, 1, 1, 1),(0, -1, 1, 2))
 
 foreach ($mints in $myints) {
-    write-host "Input: @int = [$mints]"
+    write-output "Input: @int = [$mints]"
     $sum = 0
     $out = @()
     foreach ($i in $mints) {
         $out += $i + $sum
         $sum +=  $i
     }
-    write-host "Output: [$out]`n"
+    write-output "Output: [$out]`n"
 }
 <# 
 ---------------------------------

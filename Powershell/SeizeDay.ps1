@@ -13,7 +13,7 @@ param (
     [uint]$day_of_week = 2
     )
 
-write-host "Input: Year = $year, Month = $month, Weekday of month = $weekday_of_month, day of week = $day_of_week"
+write-output "Input: Year = $year, Month = $month, Weekday of month = $weekday_of_month, day of week = $day_of_week"
 $cnt = 1
 $fnd = 0
 
@@ -34,7 +34,7 @@ while ( $d -le $days_in_month ) {
 
     if ($val -eq $day_of_week ) {
         if ($cnt -eq $weekday_of_month ) {
-            write-host "Output: $d"
+            write-output "Output: $d"
             $fnd += 1
             break
         }
@@ -43,7 +43,7 @@ while ( $d -le $days_in_month ) {
     $d += 1
 }
 if ($fnd -eq 0 ) {
-    write-host "Output: 0"
+    write-output "Output: 0"
 }
 
 <#

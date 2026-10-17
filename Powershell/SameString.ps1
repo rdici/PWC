@@ -11,12 +11,12 @@ $myarr2 = @( ("a", "bc"),("ac", "b"),("abcde") )
 $cnt = 0
 
 while ($cnt -lt $myarr1.count) {
-    write-host "Input: @arr1 =  [",$myarr1[$cnt],"]"
-    write-host "`t@arr2 = [",$myarr2[$cnt],"]"
+    write-output "Input: @arr1 =  [",$myarr1[$cnt],"]"
+    write-output "`t@arr2 = [",$myarr2[$cnt],"]"
     if (-join($myarr1[$cnt]) -eq -join($myarr2[$cnt])){
-        write-host "Output: true`n"
+        write-output "Output: true`n"
     } else { 
-        write-host "Output: false`n"
+        write-output "Output: false`n"
     }
     $cnt += 1
 }

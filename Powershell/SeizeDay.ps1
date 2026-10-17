@@ -1,4 +1,4 @@
-<#
+﻿<#
 ------------------------------------------
 AUTHOR: Robert DiCicco
 DATE  : 2023-10-04
@@ -30,8 +30,8 @@ while ( $d -le $days_in_month ) {
         Friday { $val = 5 }
         Saturday { $val = 6 }
     }
-    
-    
+
+
     if ($val -eq $day_of_week ) {
         if ($cnt -eq $weekday_of_month ) {
             write-host "Output: $d"
@@ -45,7 +45,7 @@ while ( $d -le $days_in_month ) {
 if ($fnd -eq 0 ) {
     write-host "Output: 0"
 }
- 
+
 <#
 ------------------------------------------
 SAMPLE OUTPUT

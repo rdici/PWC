@@ -1,4 +1,4 @@
-<#
+﻿<#
 ---------------------------------------------
 AUTHOR: Robert DiCicco
 DATE  : 09-30-2023
@@ -22,7 +22,7 @@ function WalkLoop {
         $outloop += $s
         $ol = $outloop.Count
         if ($ol -eq 1 ) {
-            write-host "`tLoop: [$outloop]"
+            write-output "`tLoop: [$outloop]"
             $global:lps += 1
         }
         return
@@ -47,13 +47,13 @@ function WalkLoop {
     #}
     $ol = $outloop.Count
     if (($ol -gt 2)-or ($ol -eq 1 )) {
-        write-host "`tLoop: [$outloop]"
+        write-output "`tLoop: [$outloop]"
         $global:lps += 1
     }
 }
-          
+
 foreach ($mints in $myints) {
-     write-host "Input: [@ints = $mints]"
+     write-output "Input: [@ints = $mints]"
      $global:seen = @()
      $global:lps = 0
      $cnt = 0
@@ -61,8 +61,8 @@ foreach ($mints in $myints) {
          WalkLoop $mints $cnt
          $cnt += 1
      }
-     write-host "`n`tOutput: $global:lps"
-     write-host "----------------------------------------------------"
+     write-output "`n`tOutput: $global:lps"
+     write-output "----------------------------------------------------"
 }
 
 <#

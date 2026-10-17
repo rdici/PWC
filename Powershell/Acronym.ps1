@@ -20,13 +20,13 @@ function GetFirstLetters($wds) {
 }
 
 foreach ($str in $mystr) {
-    write-host "Input: @str = [$str]"
-    write-host "check = ["$mychk[$cnt]"]"
+    write-output "Input: @str = [$str]"
+    write-output "check = ["$mychk[$cnt]"]"
     $retval = GetFirstLetters($mystr[$cnt])
     if ( $retval -eq $mychk[$cnt]) {
-        write-host "Output: true`n"
+        write-output "Output: true`n"
     } else {
-        write-host "Output: false`n"
+        write-output "Output: false`n"
     }
     $cnt += 1
 }

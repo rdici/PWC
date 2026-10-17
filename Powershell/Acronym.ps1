@@ -1,5 +1,5 @@
 #!/usr/bin/env powershell
-<# 
+<#
 ------------------------------------
 AUTHOR: Robert DiCicco
 DATE  : 2023-10-21
@@ -31,7 +31,7 @@ foreach ($str in $mystr) {
     $cnt += 1
 }
 
-<# 
+<#
 ------------------------------------
 SAMPLE OUTPUT
 

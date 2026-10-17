@@ -19,7 +19,7 @@ foreach ($mints in $myints) {
     }
     write-output "Output: [$out]`n"
 }
-<# 
+<#
 ---------------------------------
 SAMPLE OUTPUT
 

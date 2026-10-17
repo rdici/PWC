@@ -1,5 +1,5 @@
 #!/usr/bin/env powershell
-<# 
+<#
 -------------------------------------
 AUTHOR: Robert DiCicco
 DATE  : 2023-10-16
@@ -15,7 +15,7 @@ while ($cnt -lt $myarr1.count) {
     write-output "`t@arr2 = [",$myarr2[$cnt],"]"
     if (-join($myarr1[$cnt]) -eq -join($myarr2[$cnt])){
         write-output "Output: true`n"
-    } else { 
+    } else {
         write-output "Output: false`n"
     }
     $cnt += 1

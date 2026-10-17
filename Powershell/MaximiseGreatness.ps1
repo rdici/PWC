@@ -1,20 +1,19 @@
 $mynums = @((1, 3, 5, 2, 1, 3, 1), (1, 2, 3, 4))
-<# 
+<#
 -----------------------------------------
 AUTHOR: Robert DiCicco
 DATE  : 2023-10-07
 Challenge 237 Task 02 Maximise Greatness ( Powershell )
 -----------------------------------------
  #>
- 
+
 $maxscore = 0
 $score = 0
-$output = @()
 
 function CalcScore($a, $b) {
     $cnt = 0
     $score = 0
-    while ($cnt -lt $a.length) { 
+    while ($cnt -lt $a.length) {
         if ($a[$cnt] -lt $b[$cnt]) {
             $score += 1
         }
@@ -39,7 +38,7 @@ foreach ($nums in $mynums ) {
     write-output "Output $maxscore`n"
 }
 
-<# 
+<#
 -----------------------------------------
 SAMPLE OUTPUT
 .\MaximiseGreatness.ps1

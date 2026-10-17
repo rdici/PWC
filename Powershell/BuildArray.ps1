@@ -1,11 +1,11 @@
 #!/usr/bin/env powershell
-<# 
+<#
 -----------------------------------
 AUTHOR: Robert DiCicco
 DATE  : 23-OCT-2023
 Challenge 240 Task 02 Build Array ( Powershell )
  #>
- 
+
 $myints = @(( 0, 2, 1, 5, 3, 4),(5, 0, 1, 2, 3, 4))
 
 foreach ($mints in $myints ) {
@@ -19,7 +19,7 @@ foreach ($mints in $myints ) {
     write-output "Output: [$out]`n"
 }
 
-<# 
+<#
 -----------------------------------
 SAMPLE OUTPUT
 .\BuildArray.ps1

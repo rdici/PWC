@@ -37,7 +37,7 @@ foreach ($str in $mystr) {
 <#
 ------------------------------------
 SAMPLE OUTPUT
-
+xxxxxxxxxxxxxxxxxxxx
 .\Acronym.ps1
 
 Input: @str = [Perl Python Pascal]

@@ -10,7 +10,6 @@ $mystr = @(("Perl", "Python", "Pascal"),("Perl", "Raku"),("Oracle", "Awk", "C"))
 $mychk = @(("ppp","rp","oac"))
 $cnt = 0
 $Script:val = ""
-$test = 0
 
 function GetFirstLetters($wds) {
     $acronym = ""

@@ -1,0 +1,24 @@
+name: PowerShell CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  analyze-and-test:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install PowerShell modules
+        shell: pwsh
+        run: |
+          Install-Module PSScriptAnalyzer -Force
+          Install-Module Pester -Force
+
+      - name: Run PSScriptAnalyzer
+        shell: pwsh
+        run: |
+          Invoke-ScriptAnalyzer -Path . -Recurse -Severity Warning,Error

@@ -17,7 +17,7 @@ function GetFirstLetters($wds) {
         $w = $w.ToLower()
         $acronym += $w[0]
     }
-    return $acronym
+    return $acronym               
 }
 
 foreach ($str in $mystr) {

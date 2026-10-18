@@ -9,6 +9,7 @@ Challenge 240 Task 01 Acronym ( Powershell )
 $mystr = @(("Perl", "Python", "Pascal"),("Perl", "Raku"),("Oracle", "Awk", "C"))
 $mychk = @(("ppp","rp","oac"))
 $cnt = 0
+$Script:val = ""
 
 function GetFirstLetters($wds) {
     $acronym = ""
@@ -21,7 +22,9 @@ function GetFirstLetters($wds) {
 
 foreach ($str in $mystr) {
     write-output "Input: @str = [$str]"
-    write-output "check = ["$mychk[$cnt]"]"
+	$val = $mychk[$cnt]
+    #write-output "check = ["$mychk[$cnt]"]"
+	write-output "check = [$val]"
     $retval = GetFirstLetters($mystr[$cnt])
     if ( $retval -eq $mychk[$cnt]) {
         write-output "Output: true`n"
